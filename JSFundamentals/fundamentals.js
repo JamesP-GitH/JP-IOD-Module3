@@ -62,3 +62,20 @@ let result = `${a} + ${b} is `;
 result += a + b < 10 ? "less than 10" : "greater than 10";
 // ^ "+=" adds the string onto the end of the result string, and assigns 'result' the new value of the two strings together.
 console.log(result);
+
+// === Question 5 === Rewrite the following function using: a) function expression syntax, and b) arrow function
+// syntax. Test each version to make sure they work the same.
+
+/* Example Given
+function getGreeting(name) {
+    return "Hello " + name + "!";
+}
+*/
+
+let getGreeting = function (name) {
+    return "Hello " + name + "!";
+};
+let getGreeting2 = (name) => "Hello " + name + "!";
+
+console.log(getGreeting("Bob"));
+console.log(getGreeting2("Charlie"));
