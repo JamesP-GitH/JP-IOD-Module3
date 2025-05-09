@@ -21,13 +21,14 @@ undefined === null; // false
 console.log(" \t \n" - 2);
 
 // === Question 2 ===
-let three = "3";
+
+let three = "3"; // <- these are all strings
 let four = "4";
 let thirty = "30";
 //what is the value of the following expressions?
-let addition = three + four;
-let multiplication = three * four;
-let division = three / four;
-let subtraction = three - four;
-let lessThan1 = three < four;
-let lessThan2 = thirty < four;
+let addition = three + four; // "34" (concatinated strings)
+let multiplication = three * four; // 12 (implicit converted to numbers by *)
+let division = three / four; // 0.75 (implicit converted to numbers by /)
+let subtraction = three - four; // -1 (implicit converted to numbers by -)
+let lessThan1 = three < four; // true (implicit converted to numbers by <)
+let lessThan2 = thirty < four; // false (implicit converted to numbers by <)
