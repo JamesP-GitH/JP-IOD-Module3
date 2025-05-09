@@ -195,3 +195,27 @@ location(melbourne);
 let teamSports = ["Hockey", "Cricket", "Volleyball"];
 let dog1 = "Bingo";
 let cat1 = { name: "Fluffy", breed: "Siberian" };
+
+// a)
+let moreSports = teamSports;
+moreSports.push("Soccer");
+moreSports.unshift("Golf");
+console.log(moreSports);
+console.log(teamSports);
+
+// b)
+let dog2 = dog1;
+dog2 = "Spot";
+console.log(dog1);
+console.log(dog2);
+
+// c)
+let cat2 = cat1;
+cat2.name = "Felix";
+console.log(cat1);
+console.log(cat2);
+
+// d)
+// teamSports and cat1 change because arrays and objects point to a location in memory, even if reassigned, it points to the same location.
+// dog1 did not change because it is a primitive value, in this case a string, which gets its own new location in memory when reassinged to dog2.
+// Therefore when moreSports or cat2 is changed, it changes the original set of data because it is pointing to the same location in memory.
