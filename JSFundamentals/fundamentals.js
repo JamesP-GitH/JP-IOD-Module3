@@ -36,8 +36,8 @@ let lessThan2 = thirty < four; // false (implicit converted to numbers by <)
 
 // === Question 3 === Which of the following console.log messages will print? Why?
 
-if (0) console.log("#1 zero is true");
-if ("0") console.log("#2 zero is true");
-if (null) console.log("null is true");
-if (-1) console.log("negative is true");
-if (1) console.log("positive is true");
+if (0) console.log("#1 zero is true"); // Wont print, 0 == false
+if ("0") console.log("#2 zero is true"); // Will print because non empty string is true
+if (null) console.log("null is true"); // Wont print, null == false
+if (-1) console.log("negative is true"); // Will print, all non zero numbers including negative are true
+if (1) console.log("positive is true"); // Will print, all non zero numbers including positive are ture
