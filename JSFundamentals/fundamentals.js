@@ -41,3 +41,14 @@ if ("0") console.log("#2 zero is true"); // Will print because non empty string 
 if (null) console.log("null is true"); // Wont print, null == false
 if (-1) console.log("negative is true"); // Will print, all non zero numbers including negative are true
 if (1) console.log("positive is true"); // Will print, all non zero numbers including positive are ture
+
+// === Question 4 === Rewrite this if using the ternary/conditional operator '?'. Test it with different values for a
+// and b. What does the ‘+=’ do?
+let a = 2,
+    b = 3;
+let result = `${a} + ${b} is `;
+if (a + b < 10) {
+    result += "less than 10";
+} else {
+    result += "greater than 10";
+}
