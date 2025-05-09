@@ -235,4 +235,29 @@ function Person(name, age) {
     this.name = name;
     this.age = age;
     this.human = true;
+    this.canDrive = function () {
+        return this.age >= 18;
+    };
 }
+
+class PersonClass {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.human = true;
+    }
+
+    canDrive() {
+        return this.age >= 18;
+    }
+}
+
+let person1 = new Person("John", 32);
+let person2 = new Person("Amy", 9);
+let person3 = new PersonClass("Frank", 8);
+console.log(person1);
+console.log(`Can ${person1.name} Drive?: ` + person1.canDrive());
+console.log(person2);
+console.log(`Can ${person2.name} Drive?: ` + person2.canDrive());
+console.log(person3);
+console.log(`Can ${person3.name} Drive?: ` + person3.canDrive());
