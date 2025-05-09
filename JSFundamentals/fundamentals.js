@@ -17,3 +17,5 @@ undefined + 1; // Not a number (NAN)
 undefined == null; // true
 undefined === null; // false
 " \t \n" - 2; // -2
+
+console.log(" \t \n" - 2);
