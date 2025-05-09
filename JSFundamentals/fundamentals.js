@@ -163,3 +163,21 @@ const sydney = {
     founded: "26 January 1788",
     timezone: "Australia/Sydney",
 };
+
+const melbourne = {
+    name: "Melbourne",
+    weather: "Wet",
+    climate: "Cold",
+    waterside: true,
+    dogPopulation: 6000,
+};
+
+function location(city) {
+    for (const key in city) {
+        if (city.hasOwnProperty(key)) {
+            console.log(`${key}: ${city[key]}`);
+        }
+    }
+}
+location(sydney);
+location(melbourne);
