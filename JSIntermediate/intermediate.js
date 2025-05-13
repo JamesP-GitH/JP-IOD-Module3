@@ -377,7 +377,7 @@ function topEarner(salaries) {
 }
 console.log(topEarner(salaries));
 
-// === Question 9 === 10.The following code uses the Date object to print the current time and the number of hours
+// === Question 10 === The following code uses the Date object to print the current time and the number of hours
 // that have passed today so far. Extend the code to do the following:
 // a) Print the total number of minutes that have passed so far today
 // b) Print the total number of seconds that have passed so far today
