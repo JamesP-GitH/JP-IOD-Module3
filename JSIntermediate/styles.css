@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    background: teal;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.container > div {
+    flex-grow: 1;
+    padding: 1em;
+}
+.container .companies {
+    background: #eee;
+}
+.container .people {
+    background: lightblue;
+}
+
+input[type="button"] {
+    background: teal;
+    color: #fff;
+    border: 1px solid #333;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    font-weight: 500;
+    font-size: 16px;
+}
+input[type="button"]:hover {
+    background: #006666;
+}

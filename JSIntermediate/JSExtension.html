@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <script type="text/javascript" src="JSExtension.js"></script>
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            function setCompanyList(elemId) {
+                const container = document.getElementById(elemId);
+                container.innerHTML = "";
+                container.appendChild(createCompanyList());
+            }
+
+            function setPeopleList(elemId) {
+                document.getElementById(elemId).innerHTML = createPeopleList();
+            }
+
+            function handleAddPerson(event) {
+                event.preventDefault();
+                const name = document.getElementById("addPersonName").value;
+                const street = document.getElementById("addPersonStreet").value;
+                const suburb = document.getElementById("addPersonSuburb").value;
+                const company = document.getElementById("addPersonCompany").value;
+
+                addPerson(name, street, suburb, company);
+                setPeopleList("people_list");
+            }
+
+            function handleRemovePerson(event) {
+                event.preventDefault();
+                const name = document.getElementById("removePersonName").value;
+                removePerson(name);
+                setPeopleList("people_list");
+            }
+
+            function handleAddCompany(event) {
+                event.preventDefault();
+                const name = document.getElementById("addCompanyName").value;
+                const category = document.getElementById("addCompanyCategory").value;
+                const start = document.getElementById("addCompanyStart").value;
+                const end = document.getElementById("addCompanyEnd").value;
+
+                addCompany(name, category, start, end);
+                setCompanyList("company_list");
+            }
+
+            function handleRemoveCompany(event) {
+                event.preventDefault();
+                const name = document.getElementById("removeCompanyName").value;
+                removeCompany(name);
+                setCompanyList("company_list");
+            }
+
+            function handleChangeCompany(event) {
+                event.preventDefault();
+                const name = document.getElementById("changeCompanyName").value;
+                const newCompany = document.getElementById("changeCompanyNew").value;
+                changeCompany(name, newCompany);
+                setPeopleList("people_list");
+            }
+
+            function handleChangeAddress(event) {
+                event.preventDefault();
+                const name = document.getElementById("changeAddressName").value;
+                const street = document.getElementById("changeAddressStreet").value;
+                const suburb = document.getElementById("changeAddressSuburb").value;
+                changeAddress(name, street, suburb);
+                setPeopleList("people_list");
+            }
+
+            function handleGetCategory(event) {
+                event.preventDefault();
+                const name = document.getElementById("categoryPersonName").value;
+                const category = getCompanyCategory(name);
+                alert(name + "'s company is in the " + category + " category.");
+            }
+
+            function handleGetStartYear(event) {
+                event.preventDefault();
+                const name = document.getElementById("startYearPersonName").value;
+                const year = getCompanyStartYear(name);
+                alert(name + "'s company started in " + year + ".");
+            }
+        </script>
+
+        <div class="container">
+            <div class="companies">
+                <h2>Companies</h2>
+
+                <form name="company_actions">
+                    <div id="company_list"></div>
+                    <input type="button" value="Get All Companies" onclick="setCompanyList('company_list')" />
+                </form>
+
+                <form onsubmit="handleAddCompany(event)">
+                    <h3>Add Company</h3>
+                    <input type="text" id="addCompanyName" placeholder="Name" required />
+                    <input type="text" id="addCompanyCategory" placeholder="Category" required />
+                    <input type="number" id="addCompanyStart" placeholder="Start Year" required />
+                    <input type="number" id="addCompanyEnd" placeholder="End Year" required />
+                    <button type="submit">Add Company</button>
+                </form>
+
+                <form onsubmit="handleRemoveCompany(event)">
+                    <h3>Remove Company</h3>
+                    <input type="text" id="removeCompanyName" placeholder="Company Name" required />
+                    <button type="submit">Remove Company</button>
+                </form>
+
+                <form onsubmit="handleGetCategory(event)">
+                    <h3>Get Person's Company Category</h3>
+                    <input type="text" id="categoryPersonName" placeholder="Person Name" required />
+                    <button type="submit">Get Category</button>
+                </form>
+
+                <form onsubmit="handleGetStartYear(event)">
+                    <h3>Get Person's Company Start Year</h3>
+                    <input type="text" id="startYearPersonName" placeholder="Person Name" required />
+                    <button type="submit">Get Start Year</button>
+                </form>
+            </div>
+
+            <div class="people">
+                <h2>People</h2>
+
+                <form name="people_actions">
+                    <div id="people_list"></div>
+                    <input type="button" value="Get All People" onclick="setPeopleList('people_list')" />
+                </form>
+
+                <form onsubmit="handleAddPerson(event)">
+                    <h3>Add Person</h3>
+                    <input type="text" id="addPersonName" placeholder="Name" required />
+                    <input type="text" id="addPersonStreet" placeholder="Street" required />
+                    <input type="text" id="addPersonSuburb" placeholder="Suburb" required />
+                    <input type="text" id="addPersonCompany" placeholder="Company" required />
+                    <button type="submit">Add Person</button>
+                </form>
+
+                <form onsubmit="handleRemovePerson(event)">
+                    <h3>Remove Person</h3>
+                    <input type="text" id="removePersonName" placeholder="Person Name" required />
+                    <button type="submit">Remove Person</button>
+                </form>
+
+                <form onsubmit="handleChangeAddress(event)">
+                    <h3>Change Person's Address</h3>
+                    <input type="text" id="changeAddressName" placeholder="Person Name" required />
+                    <input type="text" id="changeAddressStreet" placeholder="New Street" required />
+                    <input type="text" id="changeAddressSuburb" placeholder="New Suburb" required />
+                    <button type="submit">Change Address</button>
+                </form>
+
+                <form onsubmit="handleChangeCompany(event)">
+                    <h3>Change Person's Company</h3>
+                    <input type="text" id="changeCompanyName" placeholder="Person Name" required />
+                    <input type="text" id="changeCompanyNew" placeholder="New Company" required />
+                    <button type="submit">Change Company</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
